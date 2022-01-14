@@ -8,8 +8,8 @@ const displayElement = document.getElementById("result-display");
 winnerBtn.addEventListener('click' , function (){
 
     // Prendo il valore dei campi input dal dom 
-    const userChoice = document.getElementById("user-number").value.trim();
-    const userNumber = parseInt(document.getElementById("user-choice").value.trim());
+    const userChoice = document.getElementById("user-choice").value.trim();
+    const userNumber = parseInt(document.getElementById("user-number").value.trim());
 
     // Costruisco una funzione per generare un numero random da 1 a 5 in questo caso 
     function rndNum(min , max){
