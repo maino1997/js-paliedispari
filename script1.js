@@ -8,7 +8,7 @@ const displayElement = document.getElementById("result-display");
 palBtn.addEventListener('click' , function (){
 
     // Prendo il valore dall'input 
-    const inputWord = document.getElementById("user-word").value;
+    const inputWord = document.getElementById("user-word").value.trim();
     
     // Costruisco una funzione per montare la parola al contrario e confrontarla con l'originale
     function isPal  (userWord){
