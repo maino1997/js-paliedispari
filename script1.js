@@ -1,30 +1,32 @@
+const palBtn = document.getElementById("disc-pal");
+const displayElement = document.getElementById("result-display");
 
-
-
-const inputWord = prompt("inserisci una parola");
-
-function isPal  (userWord){
-    let reversedWord = "";
-      
-    for (let i = userWord.length - 1; i >= 0; i--){
-    reversedWord += userWord[i];
-    console.log(userWord[i]);
-    }
+palBtn.addEventListener('click' , function (){
+    const inputWord = document.getElementById("user-word").value;
     
-    if(reversedWord === userWord){
-            return true;
+    function isPal  (userWord){
+        let reversedWord = "";
+          
+        for (let i = userWord.length - 1; i >= 0; i--){
+        reversedWord += userWord[i];
+        console.log(userWord[i]);
         }
-        return false;
-    }
         
-    const isPalindrome = isPal(inputWord);
-    console.log(isPalindrome);
-    
-    if (isPalindrome){
-        console.log("la parola è palindroma");
-    } else{
-        console.log("la parola non è palindroma");
-    }
+        if(reversedWord === userWord){
+                return true;
+            }
+            return false;
+        }
+            
+        const isPalindrome = isPal(inputWord);
+        console.log(isPalindrome);
         
-                
+        if (isPalindrome){
+            displayElement.innerText = "La parola è Palindroma";
+        } else{
+            displayElement.innerText = "La parola non è Palindroma";
+        }         
+                    
+
+});
                 
