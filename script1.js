@@ -1,7 +1,7 @@
 
 // Prendo gli elementi dal dom 
 const palBtn = document.getElementById("disc-pal");
-const displayElement = document.getElementById("result-display");
+const displayElement = document.getElementById("result-display-1");
 
 
 
@@ -32,7 +32,7 @@ palBtn.addEventListener('click' , function (){
     // Prendo il valore dall'input 
     const inputWord = document.getElementById("user-word").value.trim();
 
-    if (inputWord === "" && !isNaN(inputWord)){ 
+    if (inputWord === "" || isNaN(inputWord)){ 
         displayElement.innerText = "Non hai inserito una parola valida";
     } else{
     

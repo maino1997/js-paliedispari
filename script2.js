@@ -1,7 +1,7 @@
 
 // Prendo gli elementi dal dom 
 const winnerBtn = document.getElementById("disc-winner");
-const displayElement1 = document.getElementById("result-display");
+const displayElement1 = document.getElementById("result-display-2");
 
 
 
@@ -34,25 +34,28 @@ function isOdd(total){
 winnerBtn.addEventListener('click' , function (){
 
     // Prendo il valore dei campi input dal dom 
-    const userChoice = document.getElementById("user-choice").value.trim();
+    const userChoice = document.getElementById("user-choice").value;
     const userNumber = parseInt(document.getElementById("user-number").value.trim());
 
-    
-    // Invoco le funzioni con i relativi paramentri e stampo il risultato in console 
-    const pcRandom = rndNum(1 , 5);
-    console.log(`Il numero del pc è ${pcRandom}`);
-    
-    const sommaNumeri = sum(userNumber , pcRandom);
-    console.log(`la somma è ${sommaNumeri}`);
-    
-    const pariDispari = isOdd(sommaNumeri);
-    console.log(pariDispari);
-    
-    // Controllo se ha vinto l'utente con la scelta di prima o il computer 
-    if(userChoice === pariDispari){
-        displayElement1.innerText = "Ha vinto l'utente";
+    if (isNaN(userNumber) || userNumber < 1 || userNumber > 5){
+        displayElement1.innerText = "Non hai inserito un numero corretto";
     } else{
-        displayElement1.innerText = "Ha vinto il computer";
+        // Invoco le funzioni con i relativi paramentri e stampo il risultato in console 
+        const pcRandom = rndNum(1 , 5);
+        console.log(`Il numero del pc è ${pcRandom}`);
+        
+        const sommaNumeri = sum(userNumber , pcRandom);
+        console.log(`la somma è ${sommaNumeri}`);
+        
+        const pariDispari = isOdd(sommaNumeri);
+        console.log(pariDispari);
+        
+        // Controllo se ha vinto l'utente con la scelta di prima o il computer 
+        if(userChoice === pariDispari){
+            displayElement1.innerText = "Ha vinto l'utente";
+        } else{
+            displayElement1.innerText = "Ha vinto il computer";
+        }
     }
 });
 
