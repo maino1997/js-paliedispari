@@ -9,6 +9,10 @@ palBtn.addEventListener('click' , function (){
 
     // Prendo il valore dall'input 
     const inputWord = document.getElementById("user-word").value.trim();
+
+    if (inputWord === "" && !isNaN(inputWord)){ 
+        displayElement.innerText = "Non hai inserito una parola valida";
+    } else{
     
     // Costruisco una funzione per montare la parola al contrario e confrontarla con l'originale
     function isPal  (userWord){
@@ -37,7 +41,7 @@ palBtn.addEventListener('click' , function (){
         } else{
             displayElement.innerText = "La parola non è Palindroma";
         }         
-                    
+    }              
 
 });
                 
