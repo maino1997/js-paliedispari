@@ -32,22 +32,23 @@ palBtn.addEventListener('click' , function (){
     // Prendo il valore dall'input 
     const inputWord = document.getElementById("user-word").value.trim();
 
-    if (inputWord === "" || isNaN(inputWord)){ 
-        displayElement.innerText = "Non hai inserito una parola valida";
-    } else{
-    
-          
-        // Invoco la funzione per avere il risultato booleano 
-        const isPalindrome = isPal(inputWord);
-        console.log(isPalindrome);
+       
+        if(parseInt(inputWord) == inputWord || inputWord.length == 0){
+            displayElement.innerText = "La parola che hai inserito non è valida";
+        } else {
         
-        // Stampo in pagina il risultato
-        if (isPalindrome){
-            displayElement.innerText = "La parola è Palindroma";
-        } else{
-            displayElement.innerText = "La parola non è Palindroma";
-        }         
-    }              
+            
+            // Invoco la funzione per avere il risultato booleano 
+            const isPalindrome = isPal(inputWord);
+            console.log(isPalindrome);
+            
+            // Stampo in pagina il risultato
+            if (isPalindrome){
+                displayElement.innerText = "La parola è Palindroma";
+            } else{
+                displayElement.innerText = "La parola non è Palindroma";
+            }
+    }
 
 });
                 
