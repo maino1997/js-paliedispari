@@ -1,4 +1,6 @@
 
+
+
 const inputWord = prompt("inserisci una parola");
 
 function isPal  (userWord){
